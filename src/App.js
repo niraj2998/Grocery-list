@@ -76,11 +76,10 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('list',JSON.stringify(list))
+    if(list.length === 0){
+      inputRef.current.focus()
+    }
   },[list])
-
-  useEffect(() => {
-    inputRef.current.focus()
-  },[])
 
   return (
     <section className="section-center">
